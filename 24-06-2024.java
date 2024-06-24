@@ -1,15 +1,13 @@
 class Solution {
-  public:
-    long long sumMatrix(long long n, long long q) {
-        // code here
-        if(2*n < q){
-            return 0ll;
-        }
-        else if(q<=n){
-            return q-1;
-        }
-        else{
-            return 2*n-q+1;
-        }
+    static long sumMatrix(long n, long q) {
+        
+        if(q<2 || q>n+n)    return 0;
+
+        if(q<=n)    return q-1;
+        if(q==n+1)  return q-1;
+        
+        long d = q-(n+1);
+        return n-d;
+        
     }
-};
+}
